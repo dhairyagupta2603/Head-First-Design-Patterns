@@ -30,7 +30,7 @@ class Projector {
 
 class Lights {
    public:
-    void dim(int dimming) { std::cout << "Lights dimmed  to " << dimming << "%\n"; }
+    void dim(int dimming) { std::cout << "Lights dimmed to " << dimming << "%\n"; }
     void on() { std::cout << "The lights are on\n"; }
 };
 
