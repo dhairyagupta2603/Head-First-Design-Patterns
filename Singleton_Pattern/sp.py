@@ -40,11 +40,14 @@ class ChocolateBoilerSingleton(object):
             self.isEmpty = True
 
 
-def main():
+def main() -> None:
     cb = ChocolateBoilerSingleton()
     cb2 = ChocolateBoilerSingleton()
     print(cb2 is cb)
 
-main()
+
+if __name__ == '__main__':
+    main()
+    
 
 

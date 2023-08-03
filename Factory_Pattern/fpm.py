@@ -8,7 +8,7 @@ class Pizza(ABC):
         self.sauce: str = None
         self.toppings: list[str] = []
 
-    def prepare(self):
+    def prepare(self) -> None:
         print(f'Prepare {self.name}')
         print('Tossing dough...')
         print('Adding sauce...')
@@ -65,5 +65,8 @@ def main() -> None:
     pizza = nyStore.orderPizza("Cheese")
     print(f"Ethan ordered a {pizza.getName()}")
 
-main()
+
+if __name__ == '__main__':
+    main()
+    
         

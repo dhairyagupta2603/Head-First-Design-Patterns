@@ -2,42 +2,42 @@ from abc import ABC, abstractmethod
 
 class QuackBehaviour(ABC):
     @abstractmethod
-    def quacks(self): pass
+    def quacks(self) -> None: pass
 
 class SwimBehaviour(ABC):
     @abstractmethod
-    def swims(self): pass
+    def swims(self) -> None: pass
 
 class Quack(QuackBehaviour):
-    def quacks(self): # override QuackBehaviour.quacks()
+    def quacks(self) -> None: # override QuackBehaviour.quacks()
         print("Quack")
 
 class Squeek(QuackBehaviour):
-    def quacks(self): # override QuackBehaviour.quacks()
+    def quacks(self) -> None: # override QuackBehaviour.quacks()
         print("Sqeek")
 
 class Swim(SwimBehaviour):
-    def swims(self): # override SwimBehaviour.swims()
+    def swims(self) -> None: # override SwimBehaviour.swims()
         print("Swims")
 
 class Floats(SwimBehaviour):
-    def swims(self): # override SwimBehaviour.swims()
+    def swims(self) -> None: # override SwimBehaviour.swims()
         print("Floats")
 
 class Duck:
-    def performQuackBehaviour(self):
+    def performQuackBehaviour(self) -> None:
         self.quackBehaviour.quacks()
 
-    def performSwimBehaviour(self):
+    def performSwimBehaviour(self) -> None:
         self.swimBehaviour.swims()
 
-    def setQuackBehaviour(self, quackBehaviour: QuackBehaviour):
-        self.quackBehaviour = quackBehaviour
+    def setQuackBehaviour(self, quackBehaviour: QuackBehaviour) -> None:
+        self.quackBehaviour: QuackBehaviour = quackBehaviour
 
-    def setSwimBehaviour(self, swimBehaviour: SwimBehaviour):
-        self.swimBehaviour = swimBehaviour
+    def setSwimBehaviour(self, swimBehaviour: SwimBehaviour) -> None:
+        self.swimBehaviour: SwimBehaviour = swimBehaviour
 
-def main():
+def main() -> None:
     mallardDuck = Duck()
     mallardDuck.setQuackBehaviour(Quack())
     mallardDuck.setSwimBehaviour(Swim())

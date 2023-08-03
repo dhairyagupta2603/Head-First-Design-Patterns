@@ -47,5 +47,6 @@ def main():
     testDuck(duck)
     testDuck(turkeyAdapter)
 
-main()
+if __name__ == '__main__':
+    main()
     

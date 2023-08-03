@@ -198,4 +198,6 @@ def main() -> None:
     rc.undoButtonPressed()
     
 
-main()
+if __name__ == '__main__':
+    main()
+    

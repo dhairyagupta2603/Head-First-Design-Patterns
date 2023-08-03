@@ -64,4 +64,7 @@ def main():
     b2 = Soy(b2)
     print(f'{b2.get_desc()} ${b2.cost()}')
 
-main()
+
+if __name__ == '__main__':
+    main()
+    

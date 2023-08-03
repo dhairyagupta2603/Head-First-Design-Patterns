@@ -78,8 +78,12 @@ class NY_pizza_store(PizzaStore):
         else: 
             None
 
-def main():
+def main() -> None:
     ny_pizza_store = NY_pizza_store()
     ny_pizza_store.order_pizza("Cheese")
     print("Ethan ordered a pizza")
-        
+
+
+if __name__ == '__main__':
+    main()
+    
