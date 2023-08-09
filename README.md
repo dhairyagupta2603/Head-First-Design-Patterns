@@ -6,7 +6,7 @@ The book has its implementaions written in Java to illustrate the design pattern
 
 <ul>
 	<li><b>C++</b> : I have used C++17 with smart pointers for the implementation which did prove difficult in some patterns. It may be possible to further optimize it</li>
-	<li><b>Python</b> : I have used Python 3.11 and have used the inbuilt 'abc' mobule for implementing interfaces. Even though Python has dynamically typed variable declarations are diffrent from C++ and Java, I have tried to keep the spirit of the code same even if it is not requied in some cases</li>
+	<li><b>Python</b> : I have used Python 3.11 and have used the inbuilt 'abc' mobule for implementing interfaces. Even though Python has dynamically typed variable declarations, diffrent from C++ and Java, I have tried to keep the spirit of the code same even if it is not requied in some cases</li>
 </ul>
 
 NOTE: some of the code used Java specific packages like Swing. I have not implemented it.
