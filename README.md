@@ -9,4 +9,8 @@ The book has its implementaions written in Java to illustrate the design pattern
 	<li><b>Python</b> : I have used Python 3.11 and have used the inbuilt 'abc' mobule for implementing interfaces. Even though Python has dynamically typed variable declarations, diffrent from C++ and Java, I have tried to keep the spirit of the code same even if it is not requied in some cases</li>
 </ul>
 
-NOTE: some of the code used Java specific packages like Swing. I have not implemented it.
+#### NOTE
+<ul>
+	<li>some of the code used Java specific packages like Swing. I have not implemented it.</li>
+	<li>All code for each pattern is in a single file so that it is easier to go though</li>
+</ul>
