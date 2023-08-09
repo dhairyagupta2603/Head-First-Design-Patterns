@@ -15,7 +15,19 @@ class State {
     virtual void dispense() = 0;
 };
 
-class SoldoutState : public State {};
+class SoldoutState : public State {
+    std::shared_ptr<GumballMachine> machine;
+
+public:
+    explicit SoldoutState(std::weak_ptr<GumballMachine> machine)
+        : machine(machine.lock()) {}
+
+    void insertQuater() override { std::cout << "You can't insert a quarter, the machine is sold out\n"; }
+
+    void ejectQuater() override { std::cout << "You can't eject, you haven't inserted a quarter yet\n"; }
+    void turnCrank() override { std::cout << "You turned, but there are no gumballs\n"; }
+    void dispense() override { std::cout << "No gumball dispensed\n"; }
+};
 
 class NoQuaterState : public State {
     std::shared_ptr<GumballMachine> machine;
