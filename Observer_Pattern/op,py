@@ -1,0 +1,63 @@
+from abc import ABC, abstractmethod
+
+class WeaterObserver(ABC):
+    @abstractmethod
+    def update(self, temp: float, hum: float, pressure: float) -> None: pass
+
+class Subject(ABC):
+    @abstractmethod
+    def registerObserver(self, observer)->None: pass
+
+    @abstractmethod
+    def removeObserver(self, observer) ->None: pass
+
+    @abstractmethod
+    def notifyObservers(self) ->None: pass
+
+
+class WeatherStation(Subject):
+    def __init__(self, temp: float, hum: float, pressure: float) -> None: 
+        self.observers: list[WeaterObserver] = []
+        self.temp: float = temp
+        self.hum: float = hum
+        self.pressure: float = pressure
+
+    def setMeasurements(self, temp: float, hum: float, pressure: float) -> None:
+        self.temp: float = temp
+        self.hum: float = hum
+        self.pressure: float = pressure
+        self.notifyObservers()
+
+
+    def registerObserver(self, observer) -> None:
+        self.observers.append(observer)
+
+    def removeObserver(self, observer) -> None:
+        self.observers.remove(observer)
+
+    def notifyObservers(self) -> None:
+        for observer in self.observers:
+            observer.update(self.temp, self.hum, self.pressure)
+    
+
+class CurrentConditionDE(WeaterObserver):
+    def __init__(self, weatherStation: WeatherStation) -> None:
+        self.weatherStation: WeatherStation = weatherStation
+        self.weatherStation.registerObserver(self)
+
+    def update(self, temp: float, hum: float, pressure: float) -> None:
+        self.temp: float = temp
+        self.hum: float = hum
+        self.pressure: float = pressure
+        self.display()
+
+    def display(self) -> None:
+        print(f"Curr conditions: {self.temp} C, {self.hum} mm and {self.pressure} atm")
+
+def main():
+    weatherStation = WeatherStation(69.0, 42.0, 1000.0)
+    CurrentConditionDE(weatherStation)
+    weatherStation.notifyObservers()
+
+if __name__ == '__main__':
+    main()
